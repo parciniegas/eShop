@@ -10,5 +10,6 @@ public class AddCategoriesToProductCommandHandler(
         var categoryProductList = 
             command.CategoryIds.Select(id => new CategoryProduct { CategoryId = id, ProductId = command.ProductId }).ToList();
         await repository.AddRangeAsync(categoryProductList, cancellationToken);
+        await repository.SaveChangesAsync(cancellationToken);
     }
 }

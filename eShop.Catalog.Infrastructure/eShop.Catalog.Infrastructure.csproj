@@ -5,7 +5,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ilse.Repository" Version="1.0.5" />
+    <PackageReference Include="Ilse.Repository" Version="1.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
   </ItemGroup>
 
