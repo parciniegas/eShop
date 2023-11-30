@@ -31,5 +31,6 @@ public class AddProductCommandHandler(
         };
 
         await repository.AddAsync(product, cancellationToken);
+        await repository.SaveChangesAsync(cancellationToken);
     }
 }

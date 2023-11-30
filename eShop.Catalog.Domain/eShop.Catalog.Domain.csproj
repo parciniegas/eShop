@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <PackageReference Include="Ilse.Cqrs" Version="1.0.1" />
-    <PackageReference Include="Ilse.Repository" Version="1.0.5" />
+    <PackageReference Include="Ilse.Repository" Version="1.0.9" />
   </ItemGroup>
 
   <ItemGroup>

@@ -6,7 +6,7 @@ using Ilse.Repository.Contracts;
 namespace eShop.Catalog.Application.Products.Commands.Add;
 
 public class AppAddProductCommandHandler(
-    ICommandDispatcher commandDispatcher,
+    ICommandDispatcher commandDispatcher, 
     IRepository repository): ICommandHandler<AppAddProductCommand>
 {
     public async Task HandleAsync(AppAddProductCommand command, 
@@ -18,9 +18,9 @@ public class AppAddProductCommandHandler(
             command.Price, command.AvailableStock, command.RestockThreshold, command.Labels,
             command.Tags.Select(t => new Domain.Products.Commands.Add.CommandTag(t.Name, t.Value)).ToList());
 
+        using var transaction = await repository.BeginTransactionAsync(cancellationToken);
         await commandDispatcher.ExecAsync(addProductCommand, cancellationToken);
         await commandDispatcher.ExecAsync(addCategoriesToProductCommand, cancellationToken);
-  
-        await repository.SaveChangesAsync(cancellationToken);
+        transaction.Commit();
     }
 }
