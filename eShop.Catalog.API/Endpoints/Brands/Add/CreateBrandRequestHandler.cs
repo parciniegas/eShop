@@ -11,7 +11,7 @@ public class CreateBrandRequestHandler: IEndpoint
     public void Configure(IEndpointRouteBuilder endpoints)
     {
         endpoints.MapPost("/brands", HandleAsync)
-            .RequireAuthorization("catalog.write")
+            .RequireAuthorization("catalog.admin")
             .WithTags("Brands");
     }
     

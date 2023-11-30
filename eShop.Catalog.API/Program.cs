@@ -27,6 +27,7 @@ Config.ConfigureSecurityPolicies(builder);
 builder.Logging.ClearProviders();
 builder.Host.UseNLog();
 
+
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 builder.Services.AddDbContext<BaseContext, CatalogContext>((services, options) =>
 {

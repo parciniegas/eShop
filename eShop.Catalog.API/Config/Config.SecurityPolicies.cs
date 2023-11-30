@@ -10,8 +10,7 @@ internal static partial class Config
         builder.Services.AddAuthorizationBuilder()
             .AddPolicy("catalog.guest", policy =>
                 policy.RequireAssertion(c =>
-                    c.User.HasClaim("catalog.guest", "true") ||
-                    c.User.IsInRole("admin")))
+                    c.User.HasClaim("catalog.guest", "true")))
             .AddPolicy("catalog.admin", policy =>
                 policy.RequireAssertion(c =>
                     c.User.HasClaim("catalog.admin", "true") ||

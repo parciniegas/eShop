@@ -15,6 +15,7 @@
     <PackageReference Include="Ilse.Repository" Version="1.0.5" />
     <PackageReference Include="Ilse.TenantContext" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
     <PackageReference Include="NLog.DiagnosticSource" Version="5.2.0" />
     <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.5" />
