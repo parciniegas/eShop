@@ -6,6 +6,7 @@ using Ilse.CorrelationId.DependencyInjection;
 using Ilse.CorrelationId.Middleware;
 using Ilse.Cqrs.Commands;
 using Ilse.Cqrs.Queries;
+using Ilse.Events.DependencyInjection;
 using Ilse.MinimalApi;
 using Ilse.Repository.Abstracts;
 using Ilse.Repository.Contracts;
@@ -13,6 +14,7 @@ using Ilse.Repository.Implementations;
 using Ilse.TenantContext.Context;
 using Ilse.TenantContext.DependencyInjection;
 using Ilse.TenantContext.Middleware;
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using NLog.Web;
 
@@ -20,6 +22,18 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddMassTransit(x =>
+{
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host("localhost", "/", c =>
+        {
+            c.Username("guest");
+            c.Password("guest");
+        });
+    });
+});
+
 Config.ConfigureSwagger(builder);
 Config.ConfigureSecurityPolicies(builder);
 
@@ -39,6 +53,7 @@ builder.Services.AddDbContext<BaseContext, CatalogContext>((services, options) =
 builder.Services.AddCorrelationId();
 builder.Services.AddCommands();
 builder.Services.AddQueries();
+builder.Services.AddEvents();
 builder.Services.AddEndpoints();
 builder.Services.AddTenantContext();
 builder.Services.AddScoped<IRepository, Repository>();

@@ -11,6 +11,7 @@
   <ItemGroup>
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.1" />
     <PackageReference Include="Ilse.CorrelationId" Version="1.0.0" />
+    <PackageReference Include="Ilse.Events" Version="1.0.4" />
     <PackageReference Include="Ilse.MinimalApi" Version="1.0.1" />
     <PackageReference Include="Ilse.Repository" Version="1.0.9" />
     <PackageReference Include="Ilse.TenantContext" Version="1.0.0" />

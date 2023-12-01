@@ -1,7 +1,6 @@
-using eShop.Catalog.Domain.Products;
+using eShop.Catalog.Application.Products.Commands.Update;
 using Ilse.Cqrs.Commands;
 using Ilse.MinimalApi;
-using Microsoft.AspNetCore.JsonPatch;
 
 namespace eShop.Catalog.API.Endpoints.Products.Update;
 
@@ -16,8 +15,10 @@ public class UpdateProductRequestHandler: IEndpoint
     private static async Task HandleAsync(HttpContext context,
         ICommandDispatcher commandDispatcher,
         ILogger<UpdateProductRequestHandler> logger,
-        JsonPatchDocument<Product> request)
+        UpdateProductRequest request,
+        string id)
     {
-        await Task.CompletedTask;
+        await commandDispatcher.ExecAsync(new AppProductUpdateCommand(id, request.Name, request.Description,
+            request.BrandId));
     }
 }

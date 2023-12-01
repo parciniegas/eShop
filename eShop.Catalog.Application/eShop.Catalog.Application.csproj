@@ -2,10 +2,12 @@
 
   <ItemGroup>
     <PackageReference Include="Ilse.Cqrs" Version="1.0.1" />
+    <PackageReference Include="Ilse.Events" Version="1.0.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\eShop.Catalog.Domain\eShop.Catalog.Domain.csproj" />
+    <ProjectReference Include="..\eShop.Common\eShop.Common.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
