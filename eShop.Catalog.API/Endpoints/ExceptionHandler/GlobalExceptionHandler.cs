@@ -1,5 +1,4 @@
 using Ilse.CorrelationId.Context;
-using Ilse.MinimalApi;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 

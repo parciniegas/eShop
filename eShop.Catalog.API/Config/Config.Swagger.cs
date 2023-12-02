@@ -1,7 +1,3 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Net.Http.Headers;
-using Microsoft.OpenApi.Models;
-
 namespace eShop.Catalog.API.Config;
 
 internal static partial class Config

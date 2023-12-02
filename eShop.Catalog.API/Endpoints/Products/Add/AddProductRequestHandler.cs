@@ -1,8 +1,4 @@
 using eShop.Catalog.Application.Products.Commands.Add;
-using eShop.Catalog.Domain.Exceptions;
-using Ilse.Cqrs.Commands;
-using Ilse.MinimalApi;
-using Microsoft.AspNetCore.Http.HttpResults;
 using DomainCommandTag = eShop.Catalog.Application.Products.Commands.Add.CommandTag;
 
 namespace eShop.Catalog.API.Endpoints.Products.Add;
@@ -19,7 +15,7 @@ public class AddProductRequestHandler: IEndpoint
     private static async Task<Results<Created<AddProductRequestResult>,
             ValidationProblem,
             BadRequest<string>>> 
-        HandleAsync(FluentValidation.IValidator<AddProductRequest> validator, 
+        HandleAsync(IValidator<AddProductRequest> validator, 
             ICommandDispatcher commandDispatcher,
             ILogger<AddProductRequestHandler> logger,
             AddProductRequest request)

@@ -1,8 +1,4 @@
 using eShop.Catalog.Application.Categories.Commands;
-using eShop.Catalog.Domain.Exceptions;
-using Ilse.Cqrs.Commands;
-using Ilse.MinimalApi;
-using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace eShop.Catalog.API.Endpoints.Categories.Add;
 

@@ -1,8 +1,4 @@
 using eShop.Catalog.Application.Brands.Commands.Delete;
-using eShop.Catalog.Domain.Exceptions;
-using Ilse.Cqrs.Commands;
-using Ilse.MinimalApi;
-using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace eShop.Catalog.API.Endpoints.Brands.Delete;
 

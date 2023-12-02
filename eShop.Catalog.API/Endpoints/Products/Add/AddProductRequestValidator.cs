@@ -1,5 +1,3 @@
-using FluentValidation;
-
 namespace eShop.Catalog.API.Endpoints.Products.Add;
 
 public class AddProductRequestValidator: AbstractValidator<AddProductRequest>

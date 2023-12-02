@@ -1,6 +1,4 @@
 using eShop.Catalog.Application.Brands.Queries.GetAll;
-using Ilse.Cqrs.Queries;
-using Ilse.MinimalApi;
 
 namespace eShop.Catalog.API.Endpoints.Brands.Get;
 

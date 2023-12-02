@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 namespace eShop.Catalog.Application.Products.Commands.Update;
 
 public class AppProductUpdateCommandHandler(
-        ILogger<AppProductUpdateCommandHandler> logger,
+        ILogger<AppProductUpdateCommand> logger,
         ICommandDispatcher commandDispatcher,
         IEventDispatcher eventDispatcher,
         IEventQueue eventQueue)
@@ -26,6 +26,7 @@ public class AppProductUpdateCommandHandler(
     private async Task HandleEvents( 
         CancellationToken cancellationToken)
     {
+        logger.LogInformation("Handling events");
         var productNameChangedEvent = eventQueue.Deque<ProductNameChangedEvent>();
         if (productNameChangedEvent is not null)
             await eventDispatcher.HandleAsync(productNameChangedEvent, cancellationToken);

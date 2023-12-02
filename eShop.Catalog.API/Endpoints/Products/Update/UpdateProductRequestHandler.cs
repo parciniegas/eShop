@@ -1,6 +1,4 @@
 using eShop.Catalog.Application.Products.Commands.Update;
-using Ilse.Cqrs.Commands;
-using Ilse.MinimalApi;
 
 namespace eShop.Catalog.API.Endpoints.Products.Update;
 

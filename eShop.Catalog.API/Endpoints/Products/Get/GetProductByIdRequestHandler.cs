@@ -1,9 +1,5 @@
 using eShop.Catalog.Application.Products.Queries.GetById;
-using eShop.Catalog.Domain.Exceptions;
 using eShop.Catalog.Domain.Products;
-using Ilse.Cqrs.Queries;
-using Ilse.MinimalApi;
-using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace eShop.Catalog.API.Endpoints.Products.Get;
 

@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using System.Security.Cryptography;
 using eShop.Catalog.Domain.Exceptions;
 using eShop.Catalog.Domain.Products.Events;
 using Ilse.Cqrs.Commands;

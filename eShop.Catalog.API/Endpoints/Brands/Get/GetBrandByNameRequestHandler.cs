@@ -1,9 +1,5 @@
 using eShop.Catalog.Domain.Brands;
 using eShop.Catalog.Domain.Brands.Queries.GetByName;
-using eShop.Catalog.Domain.Exceptions;
-using Ilse.Cqrs.Queries;
-using Ilse.MinimalApi;
-using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace eShop.Catalog.API.Endpoints.Brands.Get;
 

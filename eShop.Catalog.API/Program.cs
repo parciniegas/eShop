@@ -1,30 +1,10 @@
-using eShop.Catalog.API.Config;
-using eShop.Catalog.API.Middleware;
-using eShop.Catalog.Infrastructure.Repository;
-using FluentValidation;
-using Ilse.CorrelationId.DependencyInjection;
-using Ilse.CorrelationId.Middleware;
-using Ilse.Cqrs.Commands;
-using Ilse.Cqrs.Queries;
-using Ilse.Events.DependencyInjection;
-using Ilse.MinimalApi;
-using Ilse.Repository.Abstracts;
-using Ilse.Repository.Contracts;
-using Ilse.Repository.Implementations;
-using Ilse.TenantContext.Context;
-using Ilse.TenantContext.DependencyInjection;
-using Ilse.TenantContext.Middleware;
-using MassTransit;
-using Microsoft.EntityFrameworkCore;
-using NLog.Web;
-
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddMassTransit(x =>
 {
-    x.UsingRabbitMq((context, cfg) =>
+    x.UsingRabbitMq((_, cfg) =>
     {
         cfg.Host("localhost", "/", c =>
         {
@@ -40,7 +20,6 @@ Config.ConfigureSecurityPolicies(builder);
 // NLog: Setup the logger first to catch all errors
 builder.Logging.ClearProviders();
 builder.Host.UseNLog();
-
 
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 builder.Services.AddDbContext<BaseContext, CatalogContext>((services, options) =>

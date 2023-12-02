@@ -1,7 +1,4 @@
 using eShop.Catalog.Application.Brands.Commands.Update;
-using Ilse.Cqrs.Commands;
-using Ilse.MinimalApi;
-using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace eShop.Catalog.API.Endpoints.Brands.Update;
 
