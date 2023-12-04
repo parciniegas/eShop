@@ -1,6 +1,6 @@
 using eShop.Common;
 
-namespace eShop.Catalog.Application.IBus;
+namespace eShop.Catalog.Application.Bus;
 
 public interface IBus
 {

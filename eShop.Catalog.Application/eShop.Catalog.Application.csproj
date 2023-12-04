@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <PackageReference Include="Ilse.CorrelationId" Version="1.0.0" />
     <PackageReference Include="Ilse.Cqrs" Version="1.0.1" />
     <PackageReference Include="Ilse.Events" Version="1.0.4" />
   </ItemGroup>

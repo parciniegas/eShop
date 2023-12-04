@@ -1,3 +1,3 @@
 namespace eShop.Common.Product.Events;
 
-public record ProductBrandChangedMessage(string ProductId, string BrandId, Guid CorrelationId) : IMessage;
+public record ProductBrandChangedMessage(string ProductId, int BrandId, Guid CorrelationId) : IMessage;

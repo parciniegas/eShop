@@ -21,6 +21,7 @@ namespace eShop.Catalog.Domain.Products.Commands.Update
             product.BrandId = command.BrandId;
             await repository.UpdateAsync(product, cancellationToken);
             await repository.SaveChangesAsync(cancellationToken);
+            product.PropertyChanged -= PropertyChanged;
         }
 
         private void PropertyChanged(object? sender, PropertyChangedEventArgs e)

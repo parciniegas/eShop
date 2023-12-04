@@ -9,13 +9,23 @@ public class AddItemToBasketCommandHandler(
     public async Task<Basket> HandleAsync(AddItemToBasketCommand command, 
         CancellationToken cancellationToken = new CancellationToken())
     {
-        var basket = await repository.GetByIdAsync<Basket, string>(command.BuyerId, cancellationToken) 
-                     ?? new Basket(command.BuyerId);
+        var basket = await repository.GetByIdAsync<Basket, string>(command.BuyerId, cancellationToken);
+        if (basket == null)
+        {
+            basket = new Basket(command.BuyerId);
+            basket.BasketItems.Add(
+                new BasketItem(command.ProductId, command.ProductName, command.Quantity, command.UnitPrice));
+            await repository.AddAsync(basket, cancellationToken);
+            await repository.SaveChangesAsync(cancellationToken);
+            return basket;
+        }
+                     
         if (basket.BasketItems.Any(x => x.ProductId == command.ProductId))
             basket.BasketItems.First(x => x.ProductId == command.ProductId).Quantity += command.Quantity;
         else
             basket.BasketItems.Add(
                 new BasketItem(command.ProductId, command.ProductName, command.Quantity, command.UnitPrice));
+        await repository.UpdateAsync(basket, cancellationToken);
         await repository.SaveChangesAsync(cancellationToken);
         return basket;
     }
