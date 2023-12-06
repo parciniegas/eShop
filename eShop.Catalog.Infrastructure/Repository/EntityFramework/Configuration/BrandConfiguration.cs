@@ -2,7 +2,7 @@ using eShop.Catalog.Domain.Brands;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace eShop.Catalog.Infrastructure.Repository.Configuration;
+namespace eShop.Catalog.Infrastructure.Repository.EntityFramework.Configuration;
 
 public class BrandConfiguration: IEntityTypeConfiguration<Brand>
 {

@@ -1,22 +1,20 @@
 using Ilse.Cqrs.Commands;
-using Ilse.Repository.Contracts;
 
 namespace eShop.Catalog.Domain.Baskets.Commands.Add;
 
 public class AddItemToBasketCommandHandler(
-    IRepository repository): ICommandHandler<AddItemToBasketCommand, Basket>
+    IBasketRepository repository): ICommandHandler<AddItemToBasketCommand, Basket>
 {
     public async Task<Basket> HandleAsync(AddItemToBasketCommand command, 
         CancellationToken cancellationToken = new CancellationToken())
     {
-        var basket = await repository.GetByIdAsync<Basket, string>(command.BuyerId, cancellationToken);
+        var basket = await repository.GetBasketAsync(command.BuyerId, cancellationToken);
         if (basket == null)
         {
             basket = new Basket(command.BuyerId);
             basket.BasketItems.Add(
                 new BasketItem(command.ProductId, command.ProductName, command.Quantity, command.UnitPrice));
-            await repository.AddAsync(basket, cancellationToken);
-            await repository.SaveChangesAsync(cancellationToken);
+            await repository.AddBasketAsync(basket, cancellationToken);
             return basket;
         }
                      
@@ -25,8 +23,7 @@ public class AddItemToBasketCommandHandler(
         else
             basket.BasketItems.Add(
                 new BasketItem(command.ProductId, command.ProductName, command.Quantity, command.UnitPrice));
-        await repository.UpdateAsync(basket, cancellationToken);
-        await repository.SaveChangesAsync(cancellationToken);
+        await repository.UpdateBasketAsync(basket, cancellationToken);
         return basket;
     }
 }

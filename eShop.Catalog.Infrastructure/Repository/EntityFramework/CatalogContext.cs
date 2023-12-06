@@ -4,7 +4,7 @@ using eShop.Catalog.Domain.Products;
 using Ilse.Repository.Abstracts;
 using Microsoft.EntityFrameworkCore;
 
-namespace eShop.Catalog.Infrastructure.Repository;
+namespace eShop.Catalog.Infrastructure.Repository.EntityFramework;
 
 public class CatalogContext: BaseContext
 {

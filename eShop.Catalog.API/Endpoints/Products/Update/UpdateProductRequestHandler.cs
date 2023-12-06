@@ -16,6 +16,8 @@ public class UpdateProductRequestHandler: IEndpoint
         UpdateProductRequest request,
         string id)
     {
+        logger.LogTrace("UpdateProductRequestHandler.HandleAsync called with id: {id} and {request}", 
+            id, request);
         await commandDispatcher.ExecAsync(new AppProductUpdateCommand(id, request.Name, request.Description,
             request.BrandId));
     }

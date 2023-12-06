@@ -3,7 +3,7 @@ using eShop.Catalog.Domain.CategoriesProducts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace eShop.Catalog.Infrastructure.Repository.Configuration;
+namespace eShop.Catalog.Infrastructure.Repository.EntityFramework.Configuration;
 
 public class CategoryConfiguration: IEntityTypeConfiguration<Category>
 {

@@ -4,14 +4,14 @@ using Ilse.Repository.Contracts;
 
 namespace eShop.Catalog.Domain.Baskets.Commands.Delete;
 
-public class RemoveBasketCommandHandler(IRepository repository): ICommandHandler<RemoveBasketCommand>
+public class RemoveBasketCommandHandler(IBasketRepository repository): ICommandHandler<RemoveBasketCommand>
 {
     public async Task HandleAsync(RemoveBasketCommand command, 
         CancellationToken cancellationToken = new CancellationToken())
     {
-        var basket = await repository.GetByIdAsync<Basket, string>(command.BuyerId, cancellationToken);
+        var basket = await repository.GetBasketAsync(command.BuyerId, cancellationToken);
         if (basket == null)
             throw new EntityNotFoundException($"Basket with id '{command.BuyerId}' not found!");
-        await repository.DeleteAsync(basket, cancellationToken);
+        await repository.DeleteBasketAsync(basket.BuyerId, cancellationToken);
     }
 }
