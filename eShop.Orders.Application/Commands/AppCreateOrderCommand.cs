@@ -1,8 +1,8 @@
 using Ilse.Cqrs.Commands;
 
-namespace eShop.Orders.Domain.Commands;
+namespace eShop.Orders.Application.Commands;
 
-public record CreateOrderCommand(
+public record AppCreateOrderCommand(
     DateTime OrderDate,
     Address ShippingAddress,
     Address BillingAddress,

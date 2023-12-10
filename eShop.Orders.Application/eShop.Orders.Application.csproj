@@ -6,4 +6,18 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Ilse.Cqrs" Version="1.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Ilse.Repository">
+        <HintPath>..\..\..\..\.nuget\packages\ilse.repository\1.1.0\lib\net8.0\Ilse.Repository.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\eShop.Orders.Domain\eShop.Orders.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

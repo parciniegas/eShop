@@ -8,8 +8,19 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Ilse.Cqrs" Version="1.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Ilse.MinimalApi">
+        <HintPath>..\..\..\..\.nuget\packages\ilse.minimalapi\1.0.1\lib\net7.0\Ilse.MinimalApi.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\eShop.Orders.Application\eShop.Orders.Application.csproj" />
     </ItemGroup>
 
 </Project>
