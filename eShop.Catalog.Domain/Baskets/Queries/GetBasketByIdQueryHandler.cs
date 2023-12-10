@@ -1,6 +1,5 @@
 using eShop.Catalog.Domain.Exceptions;
 using Ilse.Cqrs.Queries;
-using Ilse.Repository.Contracts;
 
 namespace eShop.Catalog.Domain.Baskets.Queries;
 

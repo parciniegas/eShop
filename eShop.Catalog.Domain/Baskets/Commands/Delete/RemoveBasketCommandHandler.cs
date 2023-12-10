@@ -1,6 +1,5 @@
 using eShop.Catalog.Domain.Exceptions;
 using Ilse.Cqrs.Commands;
-using Ilse.Repository.Contracts;
 
 namespace eShop.Catalog.Domain.Baskets.Commands.Delete;
 

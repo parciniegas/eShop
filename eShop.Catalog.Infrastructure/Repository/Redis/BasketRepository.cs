@@ -20,7 +20,7 @@ public sealed class BasketRepository: IBasketRepository, IDisposable, IAsyncDisp
         var basket = await _redis.GetDatabase().StringGetAsync(buyerId);
         return basket.IsNullOrEmpty 
             ? null 
-            : JsonSerializer.Deserialize<Basket>(basket);
+            : JsonSerializer.Deserialize<Basket>(basket!);
     }
 
     public async Task AddBasketAsync(Basket basket, CancellationToken cancellationToken = default)
