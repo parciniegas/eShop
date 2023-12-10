@@ -39,7 +39,7 @@ builder.Services.AddEndpoints();
 builder.Services.AddTenantContext();
 builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddScoped<IBus, eShop.Catalog.Infrastructure.Bus.Bus>();
-builder.Services.AddScoped<IBasketRepository, BasketRepository>();
+
 
 var app = builder.Build();
 

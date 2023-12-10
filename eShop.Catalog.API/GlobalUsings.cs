@@ -3,10 +3,7 @@
 global using eShop.Catalog.API.Config;
 global using eShop.Catalog.API.Middleware;
 global using eShop.Catalog.Application.Brands.Commands.Add;
-global using eShop.Catalog.Domain.Baskets;
-global using eShop.Catalog.Domain.Exceptions;
 global using eShop.Catalog.Infrastructure.Repository.EntityFramework;
-global using eShop.Catalog.Infrastructure.Repository.Redis;
 global using FluentValidation;
 global using Ilse.CorrelationId.DependencyInjection;
 global using Ilse.CorrelationId.Middleware;

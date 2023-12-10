@@ -1,4 +1,5 @@
 using eShop.Catalog.Application.Products.Commands.Add;
+using eShop.Common.Exceptions;
 using DomainCommandTag = eShop.Catalog.Application.Products.Commands.Add.CommandTag;
 
 namespace eShop.Catalog.API.Endpoints.Products.Add;

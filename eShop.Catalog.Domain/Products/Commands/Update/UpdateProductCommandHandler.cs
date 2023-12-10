@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
-using eShop.Catalog.Domain.Exceptions;
 using eShop.Catalog.Domain.Products.Events;
+using eShop.Common.Exceptions;
 using Ilse.Cqrs.Commands;
 using Ilse.Events.Queue;
 using Ilse.Repository.Contracts;

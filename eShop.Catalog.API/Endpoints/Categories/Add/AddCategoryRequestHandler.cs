@@ -1,4 +1,5 @@
 using eShop.Catalog.Application.Categories.Commands;
+using eShop.Common.Exceptions;
 
 namespace eShop.Catalog.API.Endpoints.Categories.Add;
 

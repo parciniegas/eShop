@@ -1,3 +1,5 @@
+using eShop.Common.Exceptions;
+
 namespace eShop.Catalog.API.Endpoints.Brands.Add;
 
 public class CreateBrandRequestHandler: IEndpoint

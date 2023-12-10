@@ -1,4 +1,5 @@
 using eShop.Catalog.Application.Brands.Commands.Delete;
+using eShop.Common.Exceptions;
 
 namespace eShop.Catalog.API.Endpoints.Brands.Delete;
 

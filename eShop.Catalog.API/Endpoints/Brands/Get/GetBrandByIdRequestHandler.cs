@@ -1,5 +1,6 @@
 using eShop.Catalog.Domain.Brands;
 using eShop.Catalog.Domain.Brands.Queries.GetById;
+using eShop.Common.Exceptions;
 
 namespace eShop.Catalog.API.Endpoints.Brands.Get;
 

@@ -23,4 +23,8 @@
     <Folder Include="Orders\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\eShop.Common\eShop.Common.csproj" />
+  </ItemGroup>
+
 </Project>

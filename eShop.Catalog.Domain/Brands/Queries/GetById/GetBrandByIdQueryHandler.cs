@@ -1,4 +1,4 @@
-using eShop.Catalog.Domain.Exceptions;
+using eShop.Common.Exceptions;
 using Ilse.Cqrs.Queries;
 using Ilse.Repository.Contracts;
 
