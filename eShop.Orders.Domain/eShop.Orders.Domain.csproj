@@ -8,7 +8,7 @@
 
     <ItemGroup>
       <PackageReference Include="Ilse.Cqrs" Version="1.0.1" />
-      <PackageReference Include="Ilse.Repository" Version="1.1.0" />
+      <PackageReference Include="Ilse.Repository" Version="1.2.0" />
     </ItemGroup>
 
 </Project>

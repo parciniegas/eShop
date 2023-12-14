@@ -1,13 +1,11 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Runtime.CompilerServices;
+﻿using System.ComponentModel.DataAnnotations;
 using eShop.Catalog.Domain.Brands;
 using eShop.Catalog.Domain.Categories;
 using Ilse.Repository.Abstracts;
 
 namespace eShop.Catalog.Domain.Products;
 
-public class Product: AuditedEntity, INotifyPropertyChanged
+public class Product: AuditedEntity
 {
     public Product(string id, string name, string description, int brandId, 
         decimal price, int availableStock, int restockThreshold)
@@ -21,7 +19,7 @@ public class Product: AuditedEntity, INotifyPropertyChanged
         RestockThreshold = restockThreshold;
     }
     [MaxLength(Constants.MaxIdLength)]
-    public string Id { get; set; }
+    public string Id { get; init; }
     [MaxLength(Constants.MaxNameLength)]
     private string _name = string.Empty;
     public string Name { get => _name; 
@@ -32,24 +30,13 @@ public class Product: AuditedEntity, INotifyPropertyChanged
     public int BrandId { get => _brandId; 
         set => SetField(ref _brandId, value); }
     public virtual Brand? Brand { get; set; }
-    public decimal Price { get; set; }
+    private decimal _price;
+    public decimal Price { get => _price; 
+        set => SetField(ref _price, value); }
     public int AvailableStock { get; set; }
     public int RestockThreshold { get; set; }
-    public List<Category> Categories { get; set; } = new();
-    public List<Tag> Tags { get; set; } = new();
-    public List<Review> Reviews { get; set; } = new();
-    public List<string> Labels { get; set; } = new();
-    public event PropertyChangedEventHandler? PropertyChanged;
-
-    protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-
-    private void SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
-    {
-        if (EqualityComparer<T>.Default.Equals(field, value)) return;
-        field = value;
-        OnPropertyChanged(propertyName);
-    }
+    public List<Category> Categories { get; init; } = [];
+    public List<Tag> Tags { get; init; } = [];
+    public List<Review> Reviews { get; init; } = [];
+    public List<string> Labels { get; init; } = [];
 }

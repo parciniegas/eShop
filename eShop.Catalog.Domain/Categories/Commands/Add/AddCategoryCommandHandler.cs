@@ -14,7 +14,7 @@ public class AddCategoryCommandHandler(
         if (categoryExists.Any())
             throw new EntityAlreadyExistsException($"Category with name '{command.Name}' already exists");
         var id = await repository.GetNextSequenceAsync<Category>();
-        var category = new Category{Id = id, Name =command.Name, Description = command.Description};
+        var category = new Category(id, command.Name, command.Description);
         await repository.AddAsync(category, cancellationToken);
         await repository.SaveChangesAsync(cancellationToken);
         return new AddCategoryCommandResult(category.Id); 

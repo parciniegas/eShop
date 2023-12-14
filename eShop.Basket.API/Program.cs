@@ -34,3 +34,4 @@ app.MapEndpoints();
 
 app.UseHttpsRedirection();
 
+app.Run();

@@ -10,7 +10,7 @@ public class RemoveItemFromBasketRequestHandler: IEndpoint
 {
     public void Configure(IEndpointRouteBuilder endpoints)
     {
-        endpoints.MapPost("/baskets/{basketId}/items/remove", HandleAsync)
+        endpoints.MapPut("/baskets/{basketId}/items/remove", HandleAsync)
             .WithTags("Baskets");
     }
 

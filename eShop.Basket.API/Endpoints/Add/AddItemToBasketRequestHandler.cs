@@ -9,7 +9,7 @@ public class AddItemToBasketRequestHandler: IEndpoint
 {
     public void Configure(IEndpointRouteBuilder endpoints)
     {
-        endpoints.MapPost("/baskets/{basketId}/items/add", HandleAsync)
+        endpoints.MapPut("/baskets/{basketId}/items/add", HandleAsync)
             .WithTags("Baskets");
     }
 

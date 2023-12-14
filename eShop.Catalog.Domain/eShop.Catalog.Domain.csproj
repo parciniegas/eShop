@@ -15,11 +15,7 @@
   <ItemGroup>
     <PackageReference Include="Ilse.Cqrs" Version="1.0.1" />
     <PackageReference Include="Ilse.Events" Version="1.0.4" />
-    <PackageReference Include="Ilse.Repository" Version="1.0.9" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Categories\Queries\" />
+    <PackageReference Include="Ilse.Repository" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup>
